@@ -7,6 +7,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- the content-for is something that the grunt-cli build picks up
+    and injects content via broccoli. Certain keywords are built in like
+    head, body, body-footer. You can define any number of custom options
+    The functionality can be found here:
+    /todo-ember/node_modules/ember-cli/lib/broccoli/ember-app.js:1376 -->
+
     {{content-for 'head'}}
 
     <link rel="stylesheet" href="assets/vendor.css">
