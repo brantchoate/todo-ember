@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.find('todo');
+    // 'this.store.find' was used in the past, has been deprecated
+    return this.store.findAll('todo');
   },
   actions: {
     createTodo: function(newTitle) {
