@@ -1,9 +1,34 @@
 <li class="{{if todo.isCompleted 'completed'}}">
     {{#if isEditing}}
+        {{!--
+        BRIEF EXPLANATION OF COMPONENT ACTIONS
+
+        from a template's point of view, actions are named HTML attributes that
+        trigger some behavior in the templates controller and route (simplified explanation)
+
+        Here's some that we can see below in our template:
+
+        action=
+        insert-newline=
+        focus-out=
+
+        And the corresponding functionality that these attributes match to:
+        /todo-ember/app/components/todo-item.js
+
+        http://guides.emberjs.com/v1.13.0/templates/input-helpers/
+        focus-out, insert-newline, checked are built in actions to the input fields
+        --}}
         {{input type="text" class="edit" value=todo.title focus-out="acceptChanges"
         insert-newline="acceptChanges"}}
     {{else}}
         {{input type="checkbox" checked=todo.isCompleted class="toggle"}}
+        {{!--
+        the action keyword triggers the editTodo in conjunction with the 'on'
+        attribute. So in this case, on "doubleClick"
+
+        if on value exists, it falls back on the 'default action' which is vaguely
+        documented and hard to predict sometimes. Normally onclick from what I can tell
+         --}}
         <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label>
         <button {{action "deleteTodo" todo}} class="destroy"></button>
     {{/if}}

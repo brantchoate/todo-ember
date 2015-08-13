@@ -24,6 +24,7 @@ export default Ember.Route.extend({
       }
     },
     deleteTodo: function(todo) {
+      console.log("delete clicked");
       todo.deleteRecord();
     },
   },
