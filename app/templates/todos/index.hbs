@@ -1,0 +1,18 @@
+<ul id="todo-list">
+
+  {{!--
+  the #each syntax is getting an overhaul on the path to 2.0
+  the line below in the past would typically look like this:
+  {{#each todo in model}}
+
+  Sidenote: The key value is important because it tells Ember if the collection
+  being iterated over has changed between renders. DOM elements are able to be
+  reused automatically which significantly improves render speed.
+
+  If no unique ID is available on the collection, "@index" can be used
+  --}}
+
+  {{#each model key="title" as |todo|}}
+    {{todo-item action="acceptChanges" deleteTodo="deleteTodo" todo=todo}}
+  {{/each}}
+</ul>

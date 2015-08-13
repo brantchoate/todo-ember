@@ -26,8 +26,7 @@
         the action keyword triggers the editTodo in conjunction with the 'on'
         attribute. So in this case, on "doubleClick"
 
-        if on value exists, it falls back on the 'default action' which is vaguely
-        documented and hard to predict sometimes. Normally onclick from what I can tell
+        if no on value exists it defaults to a single click event as the trigger
          --}}
         <label {{action "editTodo" on="doubleClick"}}>{{todo.title}}</label>
         <button {{action "deleteTodo" todo}} class="destroy"></button>

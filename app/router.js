@@ -20,6 +20,7 @@ this.route for URLs that represent adjectives or verbs modifying those nouns.
 Router.map(function() {
   //first param - the name of the resource
   //second param - the path to map it to
+  //third param - callback which allows you to nest routes
   this.resource('todos', { path: '/'}, function() {
     this.route('active');
     this.route('complete');

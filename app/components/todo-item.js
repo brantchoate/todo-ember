@@ -22,21 +22,31 @@ export default Ember.Component.extend({
   /todo-ember/app/templates/components/todo-item.hbs
   */
   actions: {
-    editTodo: function() {
+    editTodo() {
+      // isEditing is made available to the template within the closure of {{}}
       this.set('isEditing', true);
     },
-    acceptChanges: function() {
+    acceptChanges() {
       this.set('isEditing', false);
+      /*
+      sendAction gets used to trigger an action named 'acceptChanges' in the Route
+      /todo-ember/app/routes/todos.js
+
+      Why to the Route you ask? - Here's more on how action bubbling works:
+      http://guides.emberjs.com/v1.13.0/templates/actions/#toc_action-bubbling
+
+      Any subsequent parameters after the name of the action get passed along
+      */
       this.sendAction('acceptChanges', this.get("todo"));
     },
-    deleteTodo: function(todo) {
+    deleteTodo(todo) {
       this.sendAction('deleteTodo', todo);
-    }
-  }
+    },
+  },
 });
 
 
 /*
 This component gets used in
-/todo-ember/app/templates/todos.hbs:7
+/todo-ember/app/templates/todos/index.hbs
 */
