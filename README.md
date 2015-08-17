@@ -1,7 +1,6 @@
 # Todo-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a heavily documented app using Ember 1.13 + Ember CLI. I've attempted to document the basic concepts of Ember + how ChowNow's approach differs slightly from the "mainstream" approach.
 
 ## Prerequisites
 
@@ -38,10 +37,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
