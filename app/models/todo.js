@@ -6,7 +6,7 @@ http://blog.sensible.io/2013/06/26/ember-model-introduction.html
 import DS from 'ember-data';
 
 /*
-When using grunt-cli, you don't have to put any name when exporting
+When using grunt-cli, you don't have to assign any name when exporting
 the models. It uses the filename to created the module on build.
 In non grunt-cli implementations (ChowNow's)
 you would do something like this:

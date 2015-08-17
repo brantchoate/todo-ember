@@ -24,6 +24,7 @@ export default Ember.Component.extend({
   actions: {
     editTodo() {
       // isEditing is made available to the template within the closure of {{}}
+      // see /todo-ember/app/templates/components/todo-item.hbs
       this.set('isEditing', true);
     },
     acceptChanges() {
@@ -35,9 +36,10 @@ export default Ember.Component.extend({
       Why to the Route you ask? - Here's more on how action bubbling works:
       http://guides.emberjs.com/v1.13.0/templates/actions/#toc_action-bubbling
 
-      Any subsequent parameters after the name of the action get passed along
+      Any subsequent parameters after the name of the action get passed along.
+      In this case we are using this.get('todo') to grab the todo model
       */
-      this.sendAction('acceptChanges', this.get("todo"));
+      this.sendAction('acceptChanges', this.get('todo'));
     },
     deleteTodo(todo) {
       this.sendAction('deleteTodo', todo);
